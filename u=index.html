@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #1e3c72, #2a5298, #0f2027, #203a43, #2c5364);
+      background-size: 1000% 1000%;
+      animation: gradientBG 20s ease infinite;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .logo {
+      width: 200px;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: zoomIn 1.5s forwards;
+    }
+
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes zoomOut {
+      to {
+        opacity: 0;
+        transform: scale(0.2);
+      }
+    }
+
+    .quotes {
+      margin: 20px 0;
+      font-size: 20px;
+      font-style: italic;
+      min-height: 50px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress {
+      height: 15px;
+      width: 0%;
+      background: #00ffcc;
+      transition: width linear;
+    }
+
+    .side-info {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 300px;
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    .side-info button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #00ffcc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.postimg.cc/T2V4VSYz/58aef5ec-307f-4a7d-a3ee-f96395d504ae-removalai-preview.png" class="logo" id="logo">
+    <div class="quotes" id="quotes">“Redirecting you with energy...”</div>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <p>Redirecting... please wait</p>
+  </div>
+
+  <div class="side-info">
+    <h3>Want such redirection website?</h3>
+    <p>Click below to send me a mail.</p>
+    <button onclick="window.location.href='mailto:thedeeparise@gmail.com?subject=Request%20for%20Redirection%20Website&body=Hello%20Deep%2C%0AI%20want%20a%20redirection%20website%20like%20yours.%20Please%20share%20details.%0ARegards,'">Mail Me</button>
+  </div>
+
+  <script>
+    // Motivational quotes
+    const quotes = [
+      "“Dream big, work hard, stay focused.”",
+      "“Every second counts, use it wisely.”",
+      "“Discipline today = Success tomorrow.”",
+      "“Energy and consistency beats talent.”",
+      "“Your dedication defines your future.”"
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.getElementById('quotes').innerText = quotes[i];
+      i = (i + 1) % quotes.length;
+    }, 4000);
+
+    // Random redirect time (15–20 sec)
+    const redirectTime = Math.floor(Math.random() * 6 + 15) * 1000;
+    const progress = document.getElementById('progress');
+    progress.style.transitionDuration = redirectTime + "ms";
+    progress.style.width = "100%";
+
+    // Zoom out effect before redirect
+    setTimeout(() => {
+      document.getElementById('logo').style.animation = "zoomOut 1.5s forwards";
+    }, redirectTime - 1500);
+
+    // Redirect
+    setTimeout(() => {
+      window.location.href = "https://www.youtube.com/channel/UCrh1Mx5CTTbbkgW5O6iS2Tw/";
+    }, redirectTime);
+  </script>
+</body>
+</html>
